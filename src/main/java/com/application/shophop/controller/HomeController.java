@@ -1,16 +1,18 @@
 package com.application.shophop.controller;
 
+import com.application.shophop.model.Item;
 import com.application.shophop.model.User;
+import com.application.shophop.services.ItemService;
 import com.fasterxml.jackson.databind.util.JSONPObject;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin()
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class HomeController {
 
+    @Autowired
+    ItemService itemService;
 
     @RequestMapping({ "/validateLogin" })
     public User validateLogin() {
@@ -29,5 +31,10 @@ public class HomeController {
     @GetMapping("/user")
     public String  userhome(){
         return "Welcom user page";
+    }
+
+    @PostMapping("/additem")
+    public Item  additem(@RequestBody Item item) {
+       return itemService.saveaitem(item);
     }
 }
