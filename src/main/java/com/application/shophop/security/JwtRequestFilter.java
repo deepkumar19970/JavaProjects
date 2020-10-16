@@ -1,15 +1,15 @@
 package com.application.shophop.security;
 
-import io.jsonwebtoken.ExpiredJwtException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.filter.OncePerRequestFilter;
+//import io.jsonwebtoken.ExpiredJwtException;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+//import org.springframework.security.core.context.SecurityContextHolder;
+//import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.core.userdetails.UserDetailsService;
+//import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+//import org.springframework.stereotype.Controller;
+//import org.springframework.web.bind.annotation.CrossOrigin;
+//import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -18,18 +18,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Enumeration;
 
-@Controller
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+//@Controller
+//@CrossOrigin(origins = "*", allowedHeaders = "*")
 
-public class JwtRequestFilter extends OncePerRequestFilter {
+public class JwtRequestFilter/* extends OncePerRequestFilter */{
 
-    @Autowired
-    private MyUserDetailService userDetailsService;
-
-    @Autowired
-    private JwtTokenUtil jwtTokenUtil;
-    @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+//    @Autowired
+//    private MyUserDetailService userDetailsService;
+//
+//    @Autowired
+//    private JwtTokenUtil jwtTokenUtil;
+//    @Override
+   /* protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws ServletException, IOException {
         response.addHeader("Access-Control-Allow-Origin'", "*");
         response.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
@@ -84,5 +84,5 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             }
         }
         chain.doFilter(request, response);
-    }
+    }*/
 }

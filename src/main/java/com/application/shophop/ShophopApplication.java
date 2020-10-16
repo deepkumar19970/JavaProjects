@@ -8,8 +8,9 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages ="com.application.shophop.repository" )
+//@EnableJpaRepositories(basePackages ="com.application.shophop.repository" )
 public class ShophopApplication {
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(ShophopApplication.class, args);
@@ -20,7 +21,7 @@ public class ShophopApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/*").allowedOrigins("*");
+				registry.addMapping("/erp/*").allowedOrigins("http://localhost:4200").allowedHeaders("*").allowedMethods("*").allowCredentials(true);
 			}
 		};
 	}
